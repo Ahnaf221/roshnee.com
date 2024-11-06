@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Heart</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8c2c2, #f1d0d6);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            color: #e94f5a;
+            margin: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .gallery img {
+            width: 160px;
+            height: 160px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Pop-up Styles */
+        .pop-up {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 1000;
+            width: 80%;
+            max-width: 450px;
+            font-size: 1.1em;
+        }
+
+        .pop-up p {
+            margin: 20px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pop-up span {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f9c9d2;
+        }
+
+        .close-btn {
+            background-color: #e94f5a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: #d43f4b;
+        }
+
+        /* Heartbeat Animation */
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Main Text */
+        .content {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2em;
+        }
+
+        .content p {
+            font-size: 1.3em;
+            margin: 15px 0;
+            color: #555;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .content .love-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.7em;
+            color: #e94f5a;
+            margin: 20px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #e94f5a;
+            color: white;
+            padding: 18px 30px;
+            border-radius: 40px;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #d43f4b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heart-beat">To My Heart</h1>
+        <div class="gallery">
+            <img src="tas.JPG.JPG" alt="Image 1" id="img1">
+            <img src="tasnu.JPG.jpg" alt="Image 2" id="img2">
+            <img src="tass.JPG.jpg" alt="Image 3" id="img3">
+            <img src="tass1.JPG.JPG" alt="Image 4" id="img4">
+            <img src="tasss.JPG.JPG" alt="Image 5" id="img5">
+        </div>
+
+        <div class="content">
+            <p class="love-text">"I’m still here, You're present in every beat of my heart, You're in my dreams when I sleep, in my thoughts when I'm awake, at each and every moment you're with me. My heart beats for no one but you, Now it will never belong to anyone else. Khek!"</p>
+            <p>Love, did you win today?</p>
+            <a href="#" class="button" onclick="openPopUp('pop4')">Open Pop-up</a>
+        </div>
+        
+        <div class="pop-up" id="pop1">
+            <p>How much I miss you, I don’t know when we’ll meet, but I’ve always loved you and still do. I know we won’t work, but I love you, Roshnie. I’ve always loved you.</p>
+            <span>Love you forever!</span>
+            <button class="close-btn" onclick="closePopUp('pop1')">Close</button>
+        </div>
+
+        <div class="pop-up" id="pop2">
+            <p>Where should I go?</p>
+            <span>We are destined to be in each other's hearts!</span>
+            <button class="close-btn" onclick="closePopUp('pop2')">Close</button>
+        </div>
+
+        <div class="pop-up" id="pop3">
+            <p>I'm sorry for everything, I know I am a failure lover, but you are always my love, Roshnie.</p>
+            <span>Forever Yours</span>
+            <button class="close-btn" onclick="closePopUp('pop3')">Close</button>
+        </div>
+
+        <!-- New Pop-up for "Love, did you win today?" -->
+        <div class="pop-up" id="pop4">
+            <p>Yes, I won your heart today. And every day, I win with you in my life.</p>
+            <span>You are my victory, forever!</span>
+            <button class="close-btn" onclick="closePopUp('pop4')">Close</button>
+        </div>
+
+    </div>
+
+    <script>
+        function openPopUp(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closePopUp(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        document.getElementById('img1').onclick = function() {
+            openPopUp('pop1');
+        }
+        document.getElementById('img2').onclick = function() {
+            openPopUp('pop2');
+        }
+        document.getElementById('img3').onclick = function() {
+            openPopUp('pop3');
+        }
+        document.getElementById('img4').onclick = function() {
+            openPopUp('pop1');
+        }
+        document.getElementById('img5').onclick = function() {
+            openPopUp('pop2');
+        }
+    </script>
+</body>
+</html>
